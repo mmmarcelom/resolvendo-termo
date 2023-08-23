@@ -1,16 +1,11 @@
-import { useState } from 'react'
-
-export default function Cell({letter, index}){
-
-    const [color, setColor] = useState('cell')
-    //const [letter, setLetter] = useState('')
+export default function Cell({letterState, colorState, setColorState, index}){
 
     const changeColor = function() {
-        if(color === 'cell') setColor('cell-black')
-        if(color === 'cell-black') setColor('cell-yellow')
-        if(color === 'cell-yellow') setColor('cell-green')
-        if(color === 'cell-green') setColor('cell')
+        if(colorState === 'cell') setColorState('cell-black')
+        if(colorState === 'cell-black') setColorState('cell-yellow')
+        if(colorState === 'cell-yellow') setColorState('cell-green')
+        if(colorState === 'cell-green') setColorState('cell')
     }
 
-    return (<div key={index} className={color} onClick={changeColor}>{letter}</div>)
+    return (<div key={index} className={colorState} onClick={changeColor}>{letterState}</div>)
 }
