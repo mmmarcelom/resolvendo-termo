@@ -65,7 +65,7 @@ export default function Home() {
     console.log('fetchCompatibleWords com:')
     console.log(JSON.stringify(guesses))
     
-    const res = await fetch('http://localhost:3000/api/suggestions', { 
+    const res = await fetch('https://resolvendo-termo.vercel.app/api/suggestions', { 
       method: "POST", 
       body: JSON.stringify(guesses)
     })
