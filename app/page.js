@@ -110,7 +110,7 @@ export default function Home() {
   
   return (
     <main>
-      <h1>SOLUÇÃO</h1>
+      <h1 className='titulo'>SOLUÇÃO</h1>
       <div className='conteudo'>
         <Grid 
           guessesState={guesses} 

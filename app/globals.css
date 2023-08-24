@@ -1,6 +1,7 @@
 body {
   background-color: #6E5C62;
   color: whitesmoke;
+  font-family: sans-serif;
 }
 
 input {
@@ -28,7 +29,7 @@ button {
 
 h1 {
   font-size: x-large;
-  font-weight: bolder;
+  font-weight: 900;
   padding: 10px;
 }
 
@@ -56,6 +57,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.titulo {
+  padding-bottom: 40px;
 }
 
 .conteudo {
@@ -95,60 +100,64 @@ main {
 
 .cell {
   display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  margin: 4px;
+  width: 55px;
+  height: 55px;
+  border-radius: 10%;
+  margin: 2px;
   text-align: center;
-  line-height: 60px;
+  line-height: 55px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 2.5em;
+  cursor: pointer;
   background-color: #615458;
   color: #FAFAFF;
 }
 
 .cell-green {
   display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  margin: 4px;
+  width: 55px;
+  height: 55px;
+  border-radius: 10%;
+  margin: 2px;
   text-align: center;
-  line-height: 60px;
+  line-height: 55px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 2.5em;
+  cursor: pointer;
   background: #3AA394;
   color: #FAFAFF;
 }
 
 .cell-black {
   display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  margin: 4px;
+  width: 55px;
+  height: 55px;
+  border-radius: 10%;
+  margin: 2px;
   text-align: center;
-  line-height: 60px;
+  line-height: 55px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 2.5em;
+  cursor: pointer;
   background: #312A2C;
   color: #FAFAFF;
 
 }
 .cell-yellow {
   display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  margin: 4px;
+  width: 55px;
+  height: 55px;
+  border-radius: 10%;
+  margin: 2px;
   text-align: center;
-  line-height: 60px;
+  line-height: 55px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 2.5em;
+  cursor: pointer;
   background: #D3AD69;
   color: #FAFAFF;
 }
