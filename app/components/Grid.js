@@ -1,8 +1,7 @@
-"use client"
-
-export default function Grid({guessesState, setGuessesState}){
+export default function Grid({guessesState, setGuessesState, fetchCompatibleWords}){
     
     function changeColor(wordIndex, letterIndex, color){
+        console.log(`Palavra ${wordIndex}, Letra ${letterIndex}, classe: ${color} -> ${getNextColor(color)}`)
             
         const newGuessesState = {
             0: { ...guessesState[0], ...{ 1: { ...guessesState[0][1] } } },
@@ -15,6 +14,7 @@ export default function Grid({guessesState, setGuessesState}){
     
         newGuessesState[wordIndex][letterIndex]['color'] = getNextColor(color)
         setGuessesState(newGuessesState)
+        fetchCompatibleWords()
     }
     
     function getNextColor(color){
@@ -41,6 +41,6 @@ export default function Grid({guessesState, setGuessesState}){
         renderList.push(<div key={wordIndex} className="row">{renderItens}</div>)
     }
 
-    return <div>{renderList}</div>
+    return <div className='grid'>{renderList}</div>
 
 }

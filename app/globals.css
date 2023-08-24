@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: #6E5C62;
   color: whitesmoke;
 }
 
@@ -11,7 +11,7 @@ input {
   height: 40px;
   border-radius: 5px;
   padding: 0px 15px;
-  width: 80%;
+  width: 150px;
   margin: 5px;
 }
 
@@ -22,7 +22,7 @@ button {
   border-radius: 20px;
   padding: 10px 15px;
   margin: 5px;
-  width: 30%;
+  width: 100px;
 
 }
 
@@ -30,6 +30,25 @@ h1 {
   font-size: x-large;
   font-weight: bolder;
   padding: 10px;
+}
+
+h2 {
+  font-size: large;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+h3 {
+  padding-left: 30px;
+}
+
+ul {
+  column-count: 3;
+  list-style: none;
+}
+
+li {
+  padding: 0px 0px 5px 0px;
 }
 
 main {
@@ -40,17 +59,31 @@ main {
 }
 
 .conteudo {
-  display: block;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
 }
 
 .wordInput {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.wordInput-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 25px;
+}
+
+.wordInput-respostas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .row {
@@ -65,13 +98,14 @@ main {
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  border: 3px solid #504e4e;
   margin: 4px;
   text-align: center;
   line-height: 60px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
+  background-color: #615458;
+  color: #FAFAFF;
 }
 
 .cell-green {
@@ -79,15 +113,14 @@ main {
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  border: 3px solid #504e4e;
   margin: 4px;
   text-align: center;
   line-height: 60px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
-  background: #5ac85a;
-  border-color: #5ac85a;
+  background: #3AA394;
+  color: #FAFAFF;
 }
 
 .cell-black {
@@ -95,29 +128,27 @@ main {
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  border: 3px solid #504e4e;
   margin: 4px;
   text-align: center;
   line-height: 60px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
-  background: #1b1a1a;
-  border-color: #a1a1a1;
-  color: whitesmoke;
+  background: #312A2C;
+  color: #FAFAFF;
+
 }
 .cell-yellow {
   display: block;
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  border: 3px solid #504e4e;
   margin: 4px;
   text-align: center;
   line-height: 60px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5em;
-  background: #e2cc68;
-  border-color: #e2cc68;
+  background: #D3AD69;
+  color: #FAFAFF;
 }
