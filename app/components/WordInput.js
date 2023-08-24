@@ -18,12 +18,11 @@ export default function WordInput(){
     const newLettersArr = guess.split('')
   
     newGuessesState[guessNumber] = { 
-      0: guess,
-      1: { letter: newLettersArr[0], color:'cell' },
-      2: { letter: newLettersArr[1], color:'cell' },
-      3: { letter: newLettersArr[2], color:'cell' },
-      4: { letter: newLettersArr[3], color:'cell' },
-      5: { letter: newLettersArr[4], color:'cell' }
+      0: { letter: newLettersArr[0], color:'cell' },
+      1: { letter: newLettersArr[1], color:'cell' },
+      2: { letter: newLettersArr[2], color:'cell' },
+      3: { letter: newLettersArr[3], color:'cell' },
+      4: { letter: newLettersArr[4], color:'cell' }
     }
 
     setGuesses(newGuessesState)
@@ -33,57 +32,51 @@ export default function WordInput(){
   function generateGuessTemplate(){
     return {
       0: { 
-        0: '     ',
+        0: { letter: '', color:'cell' },
         1: { letter: '', color:'cell' },
         2: { letter: '', color:'cell' },
         3: { letter: '', color:'cell' },
-        4: { letter: '', color:'cell' },
-        5: { letter: '', color:'cell' }
+        4: { letter: '', color:'cell' }
       },
 
       1: { 
-        0: '     ',
+        0: { letter: '', color:'cell' },
         1: { letter: '', color:'cell' },
         2: { letter: '', color:'cell' },
         3: { letter: '', color:'cell' },
-        4: { letter: '', color:'cell' },
-        5: { letter: '', color:'cell' }
+        4: { letter: '', color:'cell' }
       },
   
       2: { 
-        0: '     ',
+        0: { letter: '', color:'cell' },
         1: { letter: '', color:'cell' },
         2: { letter: '', color:'cell' },
         3: { letter: '', color:'cell' },
-        4: { letter: '', color:'cell' },
-        5: { letter: '', color:'cell' }
+        4: { letter: '', color:'cell' }
       },
   
       3: { 
-        0: '     ',
+        0: { letter: '', color:'cell' },
         1: { letter: '', color:'cell' },
         2: { letter: '', color:'cell' },
         3: { letter: '', color:'cell' },
-        4: { letter: '', color:'cell' },
-        5: { letter: '', color:'cell' }
+        4: { letter: '', color:'cell' }
       },
   
       4: { 
-        0: '     ',
+        0: { letter: '', color:'cell' },
         1: { letter: '', color:'cell' },
         2: { letter: '', color:'cell' },
         3: { letter: '', color:'cell' },
-        4: { letter: '', color:'cell' },
-        5: { letter: '', color:'cell' }
+        4: { letter: '', color:'cell' }
       },
   
       5: { 
-        0: '     ',
+        0: { letter: '', color:'cell' },
         1: { letter: '', color:'cell' },
         2: { letter: '', color:'cell' },
         3: { letter: '', color:'cell' },
-        4: { letter: '', color:'cell' },
-        5: { letter: '', color:'cell' }
+        4: { letter: '', color:'cell' }
       }
     }
   }
@@ -93,15 +86,18 @@ export default function WordInput(){
   }
   
   async function fetchCompatibleWords(){
-  
-    const res = await fetch('http://localhost:3000/api/suggestion', { 
+    
+    
+    const res = await fetch('http://localhost:3000/api/suggestions', { 
       method: "POST", 
-      body: JSON.stringify({'word': guess})
+      body: JSON.stringify(guesses)
     })
-  
+    
     const response = await res.json()
   
     setCompatibleWords(response)
+    console.log("Recebi essas palavras")
+    console.log(response)
   }
 
   const [guesses, setGuesses ] = useState(generateGuessTemplate())
@@ -110,8 +106,8 @@ export default function WordInput(){
   const [compatibleWords, setCompatibleWords] = useState(['CAIXA', 'AREIA', 'VULTO', 'JUSTO', 'CALVO', 'JESUS' ])
 
   return (
-    <div>
-      <Grid guessesState={guesses} setGuessesState={setGuesses} />
+    <div onClick={fetchCompatibleWords}>
+      <Grid guessesState={guesses} setGuessesState={setGuesses}/>
       <div className='wordInput'>
         <input type='text' maxLength="5" placeholder={'Digite uma palavra'} value={guess} onChange={inputChange}/>
         <button onClick={addGuess}>Adicionar</button>

@@ -28,7 +28,7 @@ export default function Grid({guessesState, setGuessesState}){
     for(let wordIndex = 0; wordIndex < 6; wordIndex++){
         
         const renderItens = []
-        for(let letterIndex = 0; letterIndex < 6; letterIndex++){
+        for(let letterIndex = 0; letterIndex < 5; letterIndex++){
             renderItens.push(
                 <div 
                     key={letterIndex} 
